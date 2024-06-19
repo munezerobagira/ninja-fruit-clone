@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  client:
+    image: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      target: development
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app
+  server:
+    image: server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - ./client:/app
