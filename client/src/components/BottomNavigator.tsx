@@ -8,6 +8,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 
 import ProfileIcon from "@mui/icons-material/Person";
+import { Link } from "react-router-dom";
 export default function BottomNavigator() {
   const [value, setValue] = React.useState(0);
 
@@ -27,7 +28,13 @@ export default function BottomNavigator() {
           label="Leaderboard"
           icon={<LeaderboardIcon />}
         />
-        <BottomNavigationAction label="Leaderboard" icon={<ProfileIcon />} />
+        <Link to="/leaderboard">
+          <BottomNavigationAction
+            label="Leaderboard"
+            onClick={(e) => e.preventDefault()}
+            icon={<ProfileIcon />}
+          />
+        </Link>
       </BottomNavigation>
     </Box>
   );

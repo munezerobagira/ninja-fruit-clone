@@ -9,14 +9,18 @@ import {} from "@mui/material";
 export default function MenuAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          bgcolor: "white",
+        }}
+      >
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, flex: 1, justifyContent: "space-between" }}
           >
             <SettingsIcon />
           </IconButton>
@@ -27,7 +31,6 @@ export default function MenuAppBar() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              color="inherit"
             >
               <NotificationIcon />
             </IconButton>
