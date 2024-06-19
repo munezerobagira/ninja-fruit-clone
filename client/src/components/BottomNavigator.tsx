@@ -6,9 +6,37 @@ import MailIcon from "@mui/icons-material/Mail";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import HomeIcon from "@mui/icons-material/Home";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
-
 import ProfileIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
+
+const navigations = [
+  {
+    label: "Mail",
+    icon: <MailIcon />,
+    path: "/mail",
+  },
+  {
+    label: "Stars",
+    icon: <FavoriteIcon />,
+    path: "stats",
+  },
+  {
+    label: "Home",
+    icon: <HomeIcon />,
+    path: "/",
+  },
+  {
+    label: "Leaderboard",
+    icon: <LeaderboardIcon />,
+    path: "/leaderboard",
+  },
+  {
+    label: "Profile",
+    icon: <ProfileIcon />,
+    path: "/profile",
+  },
+];
+
 export default function BottomNavigator() {
   const [value, setValue] = React.useState(0);
 
@@ -21,20 +49,15 @@ export default function BottomNavigator() {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Mail" icon={<MailIcon />} />
-        <BottomNavigationAction label="Stars" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction
-          label="Leaderboard"
-          icon={<LeaderboardIcon />}
-        />
-        <Link to="/leaderboard">
+        {navigations.map((nav, index) => (
           <BottomNavigationAction
-            label="Leaderboard"
-            onClick={(e) => e.preventDefault()}
-            icon={<ProfileIcon />}
+            key={index}
+            component={Link}
+            to={nav.path}
+            label={nav.label}
+            icon={nav.icon}
           />
-        </Link>
+        ))}
       </BottomNavigation>
     </Box>
   );

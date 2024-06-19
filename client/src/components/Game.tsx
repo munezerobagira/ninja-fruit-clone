@@ -1,6 +1,6 @@
 // src/components/Game.tsx
 import { useEffect, useState, useRef } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Badge, Box, Button, Typography } from "@mui/material";
 import { useGame } from "../hooks/useGame";
 
 const Game: React.FC = () => {
@@ -25,16 +25,18 @@ const Game: React.FC = () => {
             left: 0,
             bottom: 0,
             zIndex: 1000,
-            bgcolor: "rgba(0, 0, 0, 0.5)",
+            bgcolor: "rgba(0, 0, 0, 0.9)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
           })}
         >
-          <Typography variant="h1" color="white">
+          <Typography variant="h3" color="white">
+            <Badge title={`${gameStats.bananasSliced} level`} />
             Congratulations!
           </Typography>
+
           <Typography variant="body1" color="white">
             You sliced {gameStats.bananasSliced} bananas!
           </Typography>
@@ -48,8 +50,8 @@ const Game: React.FC = () => {
             }}
             sx={{
               bgcolor: "white",
-              color: "black",
             }}
+            color="success"
           >
             Restart
           </Button>

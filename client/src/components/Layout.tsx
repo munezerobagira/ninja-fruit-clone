@@ -8,7 +8,7 @@ function Layout() {
     <>
       <Stack direction="column">
         <MenuAppBar />
-        <div style={{ maxHeight: "calc(100vh - 120px)" }}>
+        <div style={{ minHeight: "calc(100vh - 120px)" }}>
           <Outlet />
         </div>
         <BottomNavigator />

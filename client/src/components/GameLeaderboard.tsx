@@ -35,7 +35,7 @@ const GameLeaderboard: React.FC<LeaderboardProps> = ({ players }) => {
             <TableRow>
               <TableCell align="center">Rank</TableCell>
               <TableCell>Player</TableCell>
-              <TableCell align="right">Score</TableCell>
+              <TableCell align="right">Bananas</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

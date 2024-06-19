@@ -10,6 +10,7 @@ services:
       - "5173:5173"
     volumes:
       - ./client:/app
+      - /app/node_modules
   server:
     image: server
     build:
@@ -18,3 +19,4 @@ services:
       target: development
     volumes:
       - ./client:/app
+      - /app/node_modules
