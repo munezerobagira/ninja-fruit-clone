@@ -18,5 +18,5 @@ services:
       dockerfile: Dockerfile
       target: development
     volumes:
-      - ./client:/app
+      - ./server:/app
       - /app/node_modules
